@@ -47,7 +47,7 @@ class Dados{
 };
 
 
-void quantidade_primos( Dados dados){
+void quantidade_primos( const Dados& dados){
     
     int menor;
     int maior;
@@ -70,16 +70,14 @@ void quantidade_primos( Dados dados){
         //testar para x se ele é divisível por cada um dos primos salvos em resultado 
         //até chegar na raiz de x
         
-        
         //forma menos otimizada
         /*
         for(int i2 = 2; i2 < raiz;i2++){
             
-            
-            
             if(x%i2 == 0){
                 //não é primo
                 primo = false;
+                
             }
         }
         */
@@ -99,7 +97,6 @@ void quantidade_primos( Dados dados){
         }
         
         
-        
         if(x == 2){primo = true;}
         
         if(primo){
@@ -109,10 +106,11 @@ void quantidade_primos( Dados dados){
     }    
     
     for(int i =0;i <tamanho;i++){
-        if(primos[i]){
-            cout<<i + menor<<endl;
+        if(primos[i] and (i + menor) != 1){
+            cout<<i + menor<<"\n";
         }
     }
+    cout<<"\n";
 }
 
 
