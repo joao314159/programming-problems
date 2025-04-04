@@ -16,7 +16,7 @@ class Dados{
     public:
     
     Dados(){
-        int maior = sqrt(1000000000) + 1;
+        int maior = sqrt(1000000) + 1;
         this->maior=maior;
         
         this->primos = {};
@@ -28,9 +28,10 @@ class Dados{
             //tento dividir pelos primos já calculados
             bool primo = true;
             for(int i2 = 0;i2 < this->primos.size(); i2++){
-                if(i%i2 == 0){
+                if(i%primos[i2] == 0){
                     //não é primo
                     primo = false;
+                    break;
                 }
             }
             if(primo){
@@ -46,28 +47,101 @@ class Dados{
 };
 
 
-int quantidade_primos(int menor, int maior, Dados dados){
+void quantidade_primos( Dados dados){
     
+    int menor;
+    int maior;
+    cin>>menor;
+    cin>>maior;
     
-    return 1;
+    int tamanho = maior-menor +1;
+    bool* primos = new bool[tamanho]; 
+    for(int i2 = 0;i2<tamanho;i2++){
+        primos[i2] = false;    
+    }
+    
+    for(int i = menor; i < (maior + 1); i++){
+        
+        int x = i;
+        int raiz = sqrt(x) + 1;
+        
+        bool primo = true;
+        
+        //testar para x se ele é divisível por cada um dos primos salvos em resultado 
+        //até chegar na raiz de x
+        
+        
+        //forma menos otimizada
+        /*
+        for(int i2 = 2; i2 < raiz;i2++){
+            
+            
+            
+            if(x%i2 == 0){
+                //não é primo
+                primo = false;
+            }
+        }
+        */
+        
+        int i2 = 2;
+        int i3 = 0;
+        
+        while(i2 < raiz){
+            
+            if(x%i2 == 0){
+                //não é primo
+                primo = false;
+            }
+            
+            i3++;
+            i2 = dados.primos[i3];    
+        }
+        
+        
+        
+        if(x == 2){primo = true;}
+        
+        if(primo){
+            primos[x - menor] = true;
+        }
+        
+    }    
+    
+    for(int i =0;i <tamanho;i++){
+        if(primos[i]){
+            cout<<i + menor<<endl;
+        }
+    }
 }
 
 
 int main()
 {
-    int resultado;
+ 
+    Dados dados;
     
-    Dados dados();
+    // for(int i = 0; i < dados.primos.size();i++){
+    //     cout<<dados.primos[i]<<endl;
+    // }
+    int quantidade;
+    cin>>quantidade;
     
-    resultado = quantidade_primos(1,10,dados);
-    
-   
-    
-    for(int i = 0; i < dados.primos.size();i++){
-        cout<<dados.primos[i]<<endl;
+    for(int i =0;i < quantidade; i++){
+        quantidade_primos(dados);
     }
-    
     
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
