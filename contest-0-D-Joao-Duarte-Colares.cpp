@@ -16,7 +16,7 @@ class Dados{
     public:
     
     Dados(){
-        int maior = sqrt(1000000) + 1;
+        int maior = sqrt(1000000000) + 1;
         this->maior=maior;
         
         this->primos = {};
