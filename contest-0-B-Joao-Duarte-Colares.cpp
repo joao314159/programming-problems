@@ -12,14 +12,14 @@ using namespace std;
 
 int main()
 {
-    int a1 = 1;
-    int a2 = 10;
+    int a1;
+    int a2;
     
-//    while(cin>>a1){
+    while(cin>>a1){
         
-//        cin>>a2;
+        cin>>a2;
         
-        int maior;
+        int maior = -10;;
         
         for(int i2 = a1; i2<=a2; i2++){
             int contador = 1;
@@ -40,9 +40,9 @@ int main()
                 maior = contador;
             }
         }
-        cout<<maior<<endl;
+        cout<<a1<<" "<<a2<<" "<<maior<<endl;
         
-//    }
+    }
 
     return 0;
 }
