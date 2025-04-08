@@ -14,12 +14,11 @@ int main()
 {
     int a1;
     int a2;
+   
     
-    while(cin>>a1){
+    while(cin>>a1 and cin>>a2){
         
-        cin>>a2;
-        
-        int maior = -10;;
+        int maior = -10;
         
         for(int i2 = a1; i2<=a2; i2++){
             int contador = 1;
@@ -40,8 +39,8 @@ int main()
                 maior = contador;
             }
         }
-        cout<<a1<<" "<<a2<<" "<<maior<<endl;
-        
+        cout<<a1<<" "<<a2<<" "<<maior<<"\n";
+       
     }
 
     return 0;
