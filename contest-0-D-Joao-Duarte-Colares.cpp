@@ -85,7 +85,7 @@ void quantidade_primos( const Dados& dados){
         int i2 = 2;
         int i3 = 0;
         
-        while(i2 < raiz){
+        while(i2 <= raiz){
             
             if(x%i2 == 0){
                 //não é primo
@@ -93,6 +93,7 @@ void quantidade_primos( const Dados& dados){
             }
             
             i3++;
+            if(i3 == dados.primos.size()){break;}
             i2 = dados.primos[i3];    
         }
         
@@ -131,15 +132,3 @@ int main()
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
