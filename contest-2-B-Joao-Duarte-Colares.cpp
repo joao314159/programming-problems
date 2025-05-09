@@ -13,13 +13,12 @@ int main(){
     
     for(int i = 0; i< quantidade; i++){
         cin>>empregados[i];
-        
     }
    
     int maior = 0;
     int auxiliar = 0;
     //para cada empregado, percorrer superiores até chegar em -1
-    for(int i = 1; i< quantidade; i++){
+    for(int i = 1; i<= quantidade; i++){
         
         auxiliar = 1;
         //percorrer
