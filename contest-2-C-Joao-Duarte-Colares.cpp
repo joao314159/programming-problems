@@ -44,37 +44,6 @@ int main(){
         //aqui começa um caso de teste
         
         
-        /*
-            map<int,int> ultrapassagens;
-            
-            vector<int> array;
-            
-            int tamanho_array;
-            
-            cin>>tamanho_array;
-            
-            for(int i = 0;i < tamanho_array; i++){
-                cin>>valor;
-                array.push_back(valor);
-            }
-            
-            for(int i = 0; i <tamanho_array;i++){
-                
-                //se o valor do índice leva para fora do array
-                if((array[i] + (i+1)) > tamanho_array){
-                    ultrapassagens[i] = (array[i] + (i+1)) - tamanho_array;
-                }
-                
-            }
-            
-            //para cada valor no map, percorremos para trás
-            for(int i = 0; i < ultrapassagens.size(); i++){
-                
-                //enquanto não chegarmos no     
-            }
-        
-        */
-        
        
         
         vector<int> array;
@@ -93,13 +62,8 @@ int main(){
         
         int maior = 0;
         
-        for(int i = 0; i < tamanho_array; i++){
-            if(memory.positions[i].valor == -1 ){
-                cout<<"teste"<<endl;
-            }
-        }
         
-        for(int i = 0;i < tamanho_array; i++){
+        for(int i = ( tamanho_array -1 );i >= 0 ; i--){
             
             int resultado = 0;
             
@@ -116,7 +80,7 @@ int main(){
                         break;
                     }
                     else{
-                        resultado = resultado + memory.positions[i2].valor;
+                        resultado = resultado + array[i2];
                         i2 = i + resultado;
                     }
                 }
