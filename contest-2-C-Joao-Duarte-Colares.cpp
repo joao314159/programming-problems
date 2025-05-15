@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class node{
+class Node{
 public:
 
-    node(){
+    Node(){
         this->valor = -1;
     }
     
@@ -15,12 +15,22 @@ public:
     //se for -1 então essa posição ainda não foi visitada
     int valor;
     
-    //o índice de onde o melhor caminho até o momento que chega nessa posição fica
+    //o índice de onde o melhor caminho até o momento que chega nessa posição fica (não precisa)
     int partida;
     
 };
 
+class Memory{
+public:
 
+    Memory(int tamanho){
+        this->positions = vector<Node>(tamanho,Node());
+    }
+    
+    vector<Node> positions;
+    
+    
+};
 
 
 int main(){
@@ -30,68 +40,106 @@ int main(){
     cin>>testes;
     
     for(int contador = 0; contador < testes;contador++){
-    
-    
-    
-    
-    //aqui começa um caso de teste
-    
-    
-    /*
-        map<int,int> ultrapassagens;
+        
+        //aqui começa um caso de teste
+        
+        
+        /*
+            map<int,int> ultrapassagens;
+            
+            vector<int> array;
+            
+            int tamanho_array;
+            
+            cin>>tamanho_array;
+            
+            for(int i = 0;i < tamanho_array; i++){
+                cin>>valor;
+                array.push_back(valor);
+            }
+            
+            for(int i = 0; i <tamanho_array;i++){
+                
+                //se o valor do índice leva para fora do array
+                if((array[i] + (i+1)) > tamanho_array){
+                    ultrapassagens[i] = (array[i] + (i+1)) - tamanho_array;
+                }
+                
+            }
+            
+            //para cada valor no map, percorremos para trás
+            for(int i = 0; i < ultrapassagens.size(); i++){
+                
+                //enquanto não chegarmos no     
+            }
+        
+        */
+        
+       
         
         vector<int> array;
-        
         int tamanho_array;
-        
+            
         cin>>tamanho_array;
         
+        //para cada posição salvo o resultado de percorrer o array a partir de lá
+        Memory memory(tamanho_array);
+            
         for(int i = 0;i < tamanho_array; i++){
+            int valor;
             cin>>valor;
             array.push_back(valor);
         }
         
-        for(int i = 0; i <tamanho_array;i++){
+        int maior = 0;
+        
+        for(int i = 0; i < tamanho_array; i++){
+            if(memory.positions[i].valor == -1 ){
+                cout<<"teste"<<endl;
+            }
+        }
+        
+        for(int i = 0;i < tamanho_array; i++){
             
-            //se o valor do índice leva para fora do array
-            if((array[i] + (i+1)) > tamanho_array){
-                ultrapassagens[i] = (array[i] + (i+1)) - tamanho_array;
+            int resultado = 0;
+            
+            //ainda não checamos esse índice
+            if(memory.positions[i].valor == -1 ){
+                
+                resultado = array[i];
+                int i2 = i + array[i];
+                
+                //enquanto não ultrapassarmos o array
+                while(i2 < tamanho_array){
+                    if(memory.positions[i2].valor != -1){
+                        resultado += memory.positions[i2].valor;
+                        break;
+                    }
+                    else{
+                        resultado = resultado + memory.positions[i2].valor;
+                        i2 = i + resultado;
+                    }
+                }
+                
+                
+                //no final salva na memória
+                memory.positions[i].valor = resultado;
+                
+            }
+            else{
+                resultado = memory.positions[i].valor;
+            }
+            
+            //atualiza a solução que dá a melhor resposta
+            if(resultado > maior){
+                maior = resultado;
             }
             
         }
         
-        //para cada valor no map, percorremos para trás
-        for(int i = 0; i < ultrapassagens.size(); i++){
-            
-            //enquanto não chegarmos no     
-        }
-    
-    */
-    
-    vector<int> array;
-    int tamanho_array;
-        
-    cin>>tamanho_array;
-        
-    for(int i = 0;i < tamanho_array; i++){
-        int valor;
-        cin>>valor;
-        array.push_back(valor);
+        cout<<maior<<endl;
+  
     }
-    
-    //salvo o valor de cada índice 
-    vector<node> memory(tamanho_array,node());
-    
-    for(int i = 0;i < tamanho_array; i++){
-        
-        
-        
-        
-    }
-    
-   
-    }
-   
     
     return 0;
 }
