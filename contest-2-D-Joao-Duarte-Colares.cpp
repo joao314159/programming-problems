@@ -44,6 +44,15 @@ public:
     
 };
 
+bool dentro(int x, int y){
+    if(x >= 0 and x <8){
+        if(y >= 0 and y<8 ){
+            return true;
+        }
+    }
+    return false;
+}
+
 
 int check_bishop(int x1, int y1, int x2, int y2){
     
@@ -67,20 +76,59 @@ int check_bishop(int x1, int y1, int x2, int y2){
     }
     else{
         
-        int y01 = 8 - (y1 + 1);
-        int x01 = 8 - (x1 + 1);
-        int y02 = 8 - (y2 + 1);
-        int x02 = 8 - (x2 + 1);
+       
         
-        if( ( (double)(y1+1)/(double)(x1+1) - (double)(y2+1)/(double)(x2+1)) < 0.00001){
+        int x01 = x1;
+        int y01 = y1;
+        
+        
+        //percorre para cima esquerda
+        while(dentro(x01,y01)){
+            x01--;
+            y01--;
+            if(x01 == x2 and y01 == y2){
             return 1;
         }
-        if( ( (double)(y01+1)/(double)(x01+1) - (double)(y02+1)/(double)(x02+1)) < 0.00001){
+            
+        }
+        
+        //percorre para cima direita
+         x01 = x1;
+         y01 = y1;
+        while(dentro(x01,y01)){
+            x01++;
+            y01--;
+            if(x01 == x2 and y01 == y2){
             return 1;
         }
-        else{
-            return 2;
         }
+        
+        //percorre para baixo esquerda
+         x01 = x1;
+         y01 = y1;
+        while(dentro(x01,y01)){
+            x01--;
+            y01++;
+            if(x01 == x2 and y01 == y2){
+            return 1;
+        }
+        }
+        
+        //percorre para baixo direita
+         x01 = x1;
+         y01 = y1;
+        while(dentro(x01,y01)){
+            x01++;
+            y01++;
+            if(x01 == x2 and y01 == y2){
+            return 1;
+        }
+        }
+        
+        
+        
+        return 2;
+        
         
     }
     
