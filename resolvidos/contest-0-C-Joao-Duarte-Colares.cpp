@@ -1,4 +1,6 @@
 
+/* https://vjudge.net/contest/706892#problem/C */
+
 #include <iostream>
 
 using namespace std;
