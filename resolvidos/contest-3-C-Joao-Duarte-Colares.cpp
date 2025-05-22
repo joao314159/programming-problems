@@ -1,3 +1,5 @@
+/* https://vjudge.net/contest/717255#problem/C */
+
 #include <iostream>
 #include <vector>
 #include <string>
