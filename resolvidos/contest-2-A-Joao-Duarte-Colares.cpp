@@ -1,5 +1,5 @@
 
-/* https://vjudge.net/contest/712422#problem */
+/* https://vjudge.net/contest/712422#problem/A */
 
 #include <iostream>
 #include <vector>
