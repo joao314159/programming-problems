@@ -1,3 +1,5 @@
+/* https://vjudge.net/contest/712422#problem/B */
+
 #include <iostream>
 #include <vector> 
 
