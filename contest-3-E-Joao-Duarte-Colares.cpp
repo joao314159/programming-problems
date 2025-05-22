@@ -20,9 +20,14 @@ int main()
     vector<int> pode_pular;
     
     for(int i =0;i < palavra.length();i++){
-        char e = palavra[i];
-        int number = atoi(&e);
-        pode_pular.push_back(number);
+        
+        if(palavra[i] == '0'){
+            pode_pular.push_back(0);
+        }
+        else{
+            pode_pular.push_back(1);
+        }
+        
     }
     
     //for(int i = 0; i<pode_pular.size();i++){
@@ -64,6 +69,7 @@ int main()
             }
         }
         if(not pulou){
+            resultado = 0;
             break;
         }
         
