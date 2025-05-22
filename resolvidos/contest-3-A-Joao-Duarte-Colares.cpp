@@ -1,4 +1,6 @@
 
+/* https://vjudge.net/contest/717255#problem/A */
+
 #include <iostream>
 #include <vector>
 
