@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <vector>
 
@@ -68,15 +69,47 @@ int main(){
         else{
             cout<<0<<endl;
         }
+    }  
+                             
+    return 0;
+}
+
+
+
+*/
+
+
+
+fun main() {
+    
+    
+    val quantidade = readLine()!!.toInt()
+    
+    
+    val numbers: MutableList<Int> = mutableListOf()
+    
+    //vector<int> numbers(quantidade);
+    
+   
+    
+    for(i in 0..(quantidade-1)){
+        
+        //cin>>numbers[i];
+        val a = readLine()!!.toInt()
+        numbers.add(a)
+        
+        if(numbers[i] == 1 || numbers[i] == 4 || numbers[i] == 7 || numbers[i] == 2){
+            if(numbers[i] == 2){
+                println(2)
+            }
+            else{
+                println(1)
+            }
+        }
+        else{
+            println(0)
+        }
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    return 0;
 }
