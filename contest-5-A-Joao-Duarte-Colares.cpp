@@ -64,13 +64,24 @@ int resultado(Number entrada){
     */
 
     for(int i = 0;i < 10;i++){
-        if(entrada.quantidade_cada[i] > 3){
+        if(entrada.quantidade_cada[i] > 2){
           cout<<"quantidade "<<i<<" "<< entrada.quantidade_cada[i]<<endl;
-            return 0;
+          cout<<"resultado tem mais que 2 números repetindo "<<endl<<endl;
         }
-        cout<<"quantidade "<<i<<" "<< entrada.quantidade_cada[i]<<endl;
     }
-    return 1;
+
+    vector<bool> mais_que_o_limite(10,false);
+
+    for(int i = 0; i< 10; i++){
+      if(entrada.quantidade_cada[i] > 2 ){
+        mais_que_o_limite[i] = true;
+        cout<<"o algarismo "<<i<<" é maior que o máximo"<<endl;
+      }
+    }
+
+    
+
+
 
 }
 
