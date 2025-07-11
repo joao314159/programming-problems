@@ -146,7 +146,8 @@ int resultado(Number entrada){
                     entrada.quantidade_cada[auxiliar-1]++;
                     
                     //repete enquanto precisar
-                    if(entrada.valor_string[i] > 0){i--;}
+                    int a2 = entrada.valor_string[i] - '0';
+                    if(a2 > 0){i--;}
                     
                 }
             }
